@@ -18,7 +18,8 @@ public class QRCodeGenerator : MonoBehaviour
     void Start(){
         _storeEncodedTexture = new Texture2D(256, 256);
 
-        EncodeTextToQRode("Test");
+        string text = PlayerPrefs.GetInt("Department") + ":" + PlayerPrefs.GetInt("Personality");
+        EncodeTextToQRode(text);
     }
 
     //Encoding

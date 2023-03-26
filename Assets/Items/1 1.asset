@@ -16,12 +16,12 @@ MonoBehaviour:
   displayName: Cyan colored drink
   description: 'Nico''s favourite '
   icon: {fileID: 21300000, guid: 5839833d28f9e504597b8976a488dfa4, type: 3}
-  stat1: 1
+  stat1: 0
   stat2: 0
   stat3: 0
   stat4: 0
-  stat5: 0
-  stat6: 0
-  stat7: 1
+  stat5: 2
+  stat6: 1
+  stat7: 0
   stat8: 0
   stat9: 0

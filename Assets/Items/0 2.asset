@@ -16,7 +16,7 @@ MonoBehaviour:
   displayName: Water
   description: It's just... water..?
   icon: {fileID: 21300000, guid: a521beeddc5d01c4ea0dc03de0afbb28, type: 3}
-  stat1: 1
+  stat1: 2
   stat2: 0
   stat3: 0
   stat4: 0

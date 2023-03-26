@@ -17,7 +17,7 @@ MonoBehaviour:
   description: GOBLIN MODE!!!
   icon: {fileID: 21300000, guid: a0cf257cae3ff6348b6cba6d86d16fdf, type: 3}
   stat1: 0
-  stat2: 1
+  stat2: 2
   stat3: 0
   stat4: 0
   stat5: 0

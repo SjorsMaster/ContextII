@@ -18,10 +18,10 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 686434a153189be499a7ae75eaa01891, type: 3}
   stat1: 1
   stat2: 0
-  stat3: 0
+  stat3: 3
   stat4: 0
   stat5: 0
   stat6: 0
   stat7: 1
   stat8: 0
-  stat9: 0
+  stat9: 1

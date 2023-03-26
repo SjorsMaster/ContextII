@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
+    /// <summary>
+    /// testVV
+    /// </summary>
+    public InventoryItem testAdd;
+
+    private void Update() {
+        if(Input.GetKeyDown("a")){ Add(testAdd); print("added"); }
+    }
+    /// <summary>
+    /// test^^
+    /// </summary>
+
     private Dictionary<InventoryItem, Item> m_itemDictionary;
-    public List<Item> inventory {get; private set; }
+
+    [SerializeField] public List<Item> inventory {get; private set; }
     // Start is called before the first frame update
     void Awake()
     {
@@ -16,6 +29,7 @@ public class InventorySystem : MonoBehaviour
     // Update is called once per frame
     public void Add(InventoryItem referenceData)
     {
+        print(referenceData.name);
         if(m_itemDictionary.TryGetValue(referenceData, out Item value)){
             value.AddToStack();
         }

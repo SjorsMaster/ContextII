@@ -6,6 +6,11 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class QRCodeScanner : MonoBehaviour {
+    public List<InventoryItem> items;
+
+    public GameObject inventorySpot, itemObject;
+    int pos;
+
     [SerializeField]
     private RawImage _rawImagineBackground;
     [SerializeField]
@@ -14,6 +19,9 @@ public class QRCodeScanner : MonoBehaviour {
     private TextMeshProUGUI _textOut;
     [SerializeField]
     private RectTransform _scanZone;
+
+    [SerializeField]
+    GameObject cameraScreen;
 
     private bool _isCamAvailable;
     private WebCamTexture _camTexture;
@@ -64,15 +72,22 @@ public class QRCodeScanner : MonoBehaviour {
             IBarcodeReader barcodeReader = new BarcodeReader();
             Result result = barcodeReader.Decode(_camTexture.GetPixels32(), _camTexture.width, _camTexture.height);
             if (result != null) {
-                _textOut.text = result.Text;
-                //If succesful, remove scanner, add inventory item.
+                for(int i = 0; i < items.Count; ) { //This should really be done with a dictionary, but I have no time and i'm really tired. yikes
+                    _textOut.text = (items[i].id == result.Text) + " " + i;
+                    if (items[i].id == result.Text) { pos = i; break; }
+                    else { i++; }
+                }
+                GameObject tmp = Instantiate(itemObject, inventorySpot.transform);
+                tmp.GetComponent<ItemWithStats>().SetStats(items[pos]);
+                cameraScreen.SetActive(false);
+                _textOut.text = "scan";
             }
             else {
-                _textOut.text = "failed to read qrcode";
+                _textOut.text = "try again";
             }
         }
         catch {
-            _textOut.text = "failed in try";
+            _textOut.text = "error";
         }
     }
 }

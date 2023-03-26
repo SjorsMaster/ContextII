@@ -19,4 +19,9 @@ public class ItemWithStats : MonoBehaviour
         icon.sprite = me.icon;
         label.text = me.displayName;
     }
+
+    public InventoryItem GiveSelf() {
+        print(self.displayName);
+        return self;
+    }
 }

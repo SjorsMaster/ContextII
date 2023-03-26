@@ -10,6 +10,7 @@ public class ReceiveInput : MonoBehaviour {
     public StatsTracker tracker;
     public Image preview;
     public TMP_Text title, desc;
+    public InventorySaver inventorySaver;
 
     public void GetNewObject(GameObject reff, InventoryItem inputStats) {
         refference = reff;
@@ -31,5 +32,6 @@ public class ReceiveInput : MonoBehaviour {
         PlayerPrefs.SetFloat("stat8", Mathf.Clamp(PlayerPrefs.GetFloat("stat8") + stats.stat8, 0, tracker.max));
         PlayerPrefs.SetFloat("stat9", Mathf.Clamp(PlayerPrefs.GetFloat("stat9") + stats.stat9, 0, tracker.max));
         Destroy(refference);
+        inventorySaver.SaveItems();
     }
 }

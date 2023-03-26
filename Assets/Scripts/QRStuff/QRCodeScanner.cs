@@ -10,7 +10,7 @@ public class QRCodeScanner : MonoBehaviour {
 
     public GameObject inventorySpot, itemObject;
     int pos;
-
+    public InventorySaver inventorySaver;
     [SerializeField]
     private RawImage _rawImagineBackground;
     [SerializeField]
@@ -79,6 +79,7 @@ public class QRCodeScanner : MonoBehaviour {
                 }
                 GameObject tmp = Instantiate(itemObject, inventorySpot.transform);
                 tmp.GetComponent<ItemWithStats>().SetStats(items[pos]);
+                inventorySaver.SaveItems();
                 cameraScreen.SetActive(false);
                 _textOut.text = "scan";
             }

@@ -6,7 +6,6 @@ using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.UI;
-using static Petwork.Additions.petDefinitions;
 
 public class StatsTracker : MonoBehaviour {
     public float requiredPass = .1f;
@@ -19,6 +18,7 @@ public class StatsTracker : MonoBehaviour {
     public float canTradePotions = 15;
     public Button potionButt;
     double hours;
+    public InventorySaver inventorySaver;
     float interval = 15;
     void Start() {
         //GetStat();
@@ -94,7 +94,7 @@ public class StatsTracker : MonoBehaviour {
             print("WEEP WEEP BONUS!!");
         } //Horribly innificient lol
         PlayerPrefs.SetFloat("pots", canTradePotions);
-
+        inventorySaver.SaveItems();
         GetStat();
     }
 }

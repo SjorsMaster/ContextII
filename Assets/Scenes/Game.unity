@@ -2346,6 +2346,7 @@ GameObject:
   - component: {fileID: 904862856}
   - component: {fileID: 904862855}
   - component: {fileID: 904862854}
+  - component: {fileID: 904862857}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -2405,7 +2406,19 @@ MonoBehaviour:
   m_VerticalScrollbarSpacing: -3
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 904862857}
+        m_TargetAssemblyTypeName: InventorySaver, Assembly-CSharp
+        m_MethodName: SaveItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &904862855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2444,6 +2457,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904862852}
   m_CullTransparentMesh: 1
+--- !u!114 &904862857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904862852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3329b99f95189ef4faeefb16b5cc2aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryItems: []
+  json: 
+  SerializedinventoryItems:
+    itemList: []
+  DeSerializedinventoryItems:
+    itemList: []
+  theInventoryContent: {fileID: 324931540}
+  qRCodeScanner: {fileID: 1976738705}
 --- !u!1 &972131829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,6 +2600,7 @@ MonoBehaviour:
   preview: {fileID: 875668245}
   title: {fileID: 1627761995}
   desc: {fileID: 200559042}
+  inventorySaver: {fileID: 904862857}
 --- !u!4 &983868161
 Transform:
   m_ObjectHideFlags: 0
@@ -3401,6 +3435,7 @@ MonoBehaviour:
   max: 15
   canTradePotions: 15
   potionButt: {fileID: 622786575}
+  inventorySaver: {fileID: 904862857}
 --- !u!4 &1369555755
 Transform:
   m_ObjectHideFlags: 0
@@ -4901,6 +4936,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b1a550b22dbafa948bf3a3d221732f26, type: 2}
   inventorySpot: {fileID: 324931540}
   itemObject: {fileID: 274253139052457871, guid: 616cf847008e3ad4d83ec871dcb958ba, type: 3}
+  inventorySaver: {fileID: 904862857}
   _rawImagineBackground: {fileID: 1348210435}
   _aspectRatioFitter: {fileID: 1348210432}
   _textOut: {fileID: 1720583238}

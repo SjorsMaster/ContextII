@@ -1930,7 +1930,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1369555754}
         m_TargetAssemblyTypeName: StatsTracker, Assembly-CSharp
-        m_MethodName: usepot
+        m_MethodName: sharepot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3397,7 +3397,7 @@ MonoBehaviour:
   multiplier: 2
   stats: {fileID: 357060832}
   TradePots: {fileID: 1825485816}
-  removal: 0.05
+  removal: 0.001
   max: 15
   canTradePotions: 15
   potionButt: {fileID: 622786575}

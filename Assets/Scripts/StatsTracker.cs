@@ -22,7 +22,7 @@ public class StatsTracker : MonoBehaviour {
     float interval = 15;
     void Start() {
         //GetStat();
-        //plantOvertime();
+        plantOvertime();
         StartCoroutine(GameLoop());
     }
 
@@ -49,20 +49,23 @@ public class StatsTracker : MonoBehaviour {
         canTradePotions = PlayerPrefs.GetFloat("pots", 15);
     }
     public void usepot() {
+        UpdateStat(); //this will cause issues lol
+    }
+    public void sharepot() {
         canTradePotions--;
         UpdateStat(); //this will cause issues lol
     }
-    /*void plantOvertime() { //overtime removal of plant maybe someday
+    void plantOvertime() { //overtime removal of plant maybe someday
 
         DateTime localDate = DateTime.Now;
         DateTime tmp = DateTime.Parse(PlayerPrefs.GetString("LastDate", "" + localDate));
         hours = (localDate - tmp).TotalHours;
-
-        if(hours > requiredPass) {
-            float removalE = (float)hours * 60 * 0.000277777777778f * interval * removal;
-            print(removalE);
-        }
-    }*/
+        float def = removal;
+        removal = (float)hours / 2;
+        //removal = (float)hours * 0.00027f * interval * removal;
+        UpdateStat();
+        removal = def;
+    }
     void UpdateStat() {
         if (canTradePotions > 0)
             potionButt.interactable = true;

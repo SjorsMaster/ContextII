@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 2 1
   m_EditorClassIdentifier: 
   id: 2:1
-  displayName: Lolalioata
-  description: Commonly used for dancing powers
+  displayName: Flask of Difference
+  description: Does the exact opposite of what you'd expect
   icon: {fileID: 21300000, guid: b1bdd644dc022be4d91d75c830a3d2df, type: 3}
   stat1: 1
   stat2: 0

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 1 0
   m_EditorClassIdentifier: 
   id: 1:0
-  displayName: Devil's Juice
-  description: Given when closing a pact
+  displayName: Draught of Acid
+  description: Though acidic this can help plants ward of pests
   icon: {fileID: 21300000, guid: da8aa2ed0bdb6624db2e120492bc90f3, type: 3}
   stat1: 0
   stat2: 0

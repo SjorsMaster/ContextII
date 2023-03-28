@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class StatsTracker : MonoBehaviour {
     public float requiredPass = .1f;
-    public int multiplier = 2;
+    public int multiplier = 1;
     // Start is called before the first frame update
     public TMP_Text stats;
     public TMP_Text TradePots;

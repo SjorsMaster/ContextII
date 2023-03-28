@@ -19,7 +19,13 @@ public class StatsTracker : MonoBehaviour {
     public Button potionButt;
     double hours;
     public InventorySaver inventorySaver;
-    float interval = 15;
+    public float interval = 15;
+
+    public GameObject plant1;
+    public GameObject plant2;
+    public GameObject plant3;
+    public GameObject plant4;
+    public float offset = 10;
     void Start() {
         //GetStat();
         plantOvertime();
@@ -44,9 +50,13 @@ public class StatsTracker : MonoBehaviour {
     $"Stat 5: {PlayerPrefs.GetFloat("stat5", 15).ToString("0.00")}\n" +
     $"Stat 6: {PlayerPrefs.GetFloat("stat6", 15).ToString("0.00")}\n" +
     $"Stat 7: {PlayerPrefs.GetFloat("stat7", 15).ToString("0.00")}\n" +
-    $"Stat 8: {PlayerPrefs.GetFloat("stat8", 15).ToString("0.00")}\n" +
-    $"Stat 9: {PlayerPrefs.GetFloat("stat9", 15).ToString("0.00")}";
+    $"Stat 8: {PlayerPrefs.GetFloat("stat8", 15).ToString("0.00")}";
         canTradePotions = PlayerPrefs.GetFloat("pots", 15);
+
+        plant1.transform.localScale = Vector3.one * ((PlayerPrefs.GetFloat("stat1") + PlayerPrefs.GetFloat("stat2")) / 2 / offset);
+        plant2.transform.localScale = Vector3.one * ((PlayerPrefs.GetFloat("stat3") + PlayerPrefs.GetFloat("stat4")) / 2 / offset);
+        plant3.transform.localScale = Vector3.one * ((PlayerPrefs.GetFloat("stat5") + PlayerPrefs.GetFloat("stat6")) / 2 / offset);
+        plant4.transform.localScale = Vector3.one * ((PlayerPrefs.GetFloat("stat7") + PlayerPrefs.GetFloat("stat8")) / 2 / offset);
     }
     public void usepot() {
         UpdateStat(); //this will cause issues lol
@@ -71,7 +81,7 @@ public class StatsTracker : MonoBehaviour {
             potionButt.interactable = true;
         else
             potionButt.interactable = false;
-        TradePots.text = canTradePotions + " trades left. " + Mathf.CeilToInt(Mathf.Abs((float)hours - requiredPass)*60) + "m left til next drop.";
+        TradePots.text = canTradePotions + " trades left. " + Mathf.CeilToInt(Mathf.Abs((float)hours - requiredPass)*60) + "m left til next drop."; //This might not be 100% accurate from testing?
 
         DateTime localDate = DateTime.Now;
         DateTime tmp = DateTime.Parse(PlayerPrefs.GetString("LastDate", "" + localDate));
@@ -86,8 +96,7 @@ public class StatsTracker : MonoBehaviour {
         PlayerPrefs.SetFloat("stat6", Mathf.Clamp(PlayerPrefs.GetFloat("stat6", 15) - removal, 0, max));
         PlayerPrefs.SetFloat("stat7", Mathf.Clamp(PlayerPrefs.GetFloat("stat7", 15) - removal, 0, max));
         PlayerPrefs.SetFloat("stat8", Mathf.Clamp(PlayerPrefs.GetFloat("stat8", 15) - removal, 0, max));
-        PlayerPrefs.SetFloat("stat9", Mathf.Clamp(PlayerPrefs.GetFloat("stat9", 15) - removal, 0, max));
-
+        
         if (hours > requiredPass) {
             PlayerPrefs.SetString("LastDate", "" + localDate);
             canTradePotions += Mathf.CeilToInt(requiredPass) * multiplier;

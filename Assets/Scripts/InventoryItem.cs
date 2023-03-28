@@ -17,5 +17,4 @@ public class InventoryItem : ScriptableObject
     public int stat6;
     public int stat7;
     public int stat8;
-    public int stat9;
 }

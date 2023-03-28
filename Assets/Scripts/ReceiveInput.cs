@@ -30,7 +30,6 @@ public class ReceiveInput : MonoBehaviour {
         PlayerPrefs.SetFloat("stat6", Mathf.Clamp(PlayerPrefs.GetFloat("stat6") + stats.stat6, 0, tracker.max));
         PlayerPrefs.SetFloat("stat7", Mathf.Clamp(PlayerPrefs.GetFloat("stat7") + stats.stat7, 0, tracker.max));
         PlayerPrefs.SetFloat("stat8", Mathf.Clamp(PlayerPrefs.GetFloat("stat8") + stats.stat8, 0, tracker.max));
-        PlayerPrefs.SetFloat("stat9", Mathf.Clamp(PlayerPrefs.GetFloat("stat9") + stats.stat9, 0, tracker.max));
         Destroy(refference);
         inventorySaver.SaveItems();
     }

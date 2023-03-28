@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 2 2
   m_EditorClassIdentifier: 
   id: 2:2
-  displayName: Aronigo
-  description: A favourable potion from the potato world
+  displayName: Violent Ray Flask
+  description: This potions contains the essence of the Sun
   icon: {fileID: 21300000, guid: 25eb188ee96cb124e8ada6fa5ef88ded, type: 3}
   stat1: 1
   stat2: 0

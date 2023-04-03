@@ -14,6 +14,7 @@ public class StatsTracker : MonoBehaviour {
     public TMP_Text stats;
     public TMP_Text TradePots;
     public float removal = 0.001f;
+    public float defaultStat = 10;
     public float max = 15;
     public float canTradePotions = 15;
     public Button potionButt;
@@ -88,14 +89,14 @@ public class StatsTracker : MonoBehaviour {
         hours = (localDate - tmp).TotalHours;
 
         //my god use a forloop
-        PlayerPrefs.SetFloat("stat1", Mathf.Clamp(PlayerPrefs.GetFloat("stat1", 15) - removal, 0, max));
-        PlayerPrefs.SetFloat("stat2", Mathf.Clamp(PlayerPrefs.GetFloat("stat2", 15) - removal, 0, max));
-        PlayerPrefs.SetFloat("stat3", Mathf.Clamp(PlayerPrefs.GetFloat("stat3", 15) - removal, 0, max));
-        PlayerPrefs.SetFloat("stat4", Mathf.Clamp(PlayerPrefs.GetFloat("stat4", 15) - removal, 0, max));
-        PlayerPrefs.SetFloat("stat5", Mathf.Clamp(PlayerPrefs.GetFloat("stat5", 15) - removal, 0, max));
-        PlayerPrefs.SetFloat("stat6", Mathf.Clamp(PlayerPrefs.GetFloat("stat6", 15) - removal, 0, max));
-        PlayerPrefs.SetFloat("stat7", Mathf.Clamp(PlayerPrefs.GetFloat("stat7", 15) - removal, 0, max));
-        PlayerPrefs.SetFloat("stat8", Mathf.Clamp(PlayerPrefs.GetFloat("stat8", 15) - removal, 0, max));
+        PlayerPrefs.SetFloat("stat1", Mathf.Clamp(PlayerPrefs.GetFloat("stat1", defaultStat) - removal, 0, max));
+        PlayerPrefs.SetFloat("stat2", Mathf.Clamp(PlayerPrefs.GetFloat("stat2", defaultStat) - removal, 0, max));
+        PlayerPrefs.SetFloat("stat3", Mathf.Clamp(PlayerPrefs.GetFloat("stat3", defaultStat) - removal, 0, max));
+        PlayerPrefs.SetFloat("stat4", Mathf.Clamp(PlayerPrefs.GetFloat("stat4", defaultStat) - removal, 0, max));
+        PlayerPrefs.SetFloat("stat5", Mathf.Clamp(PlayerPrefs.GetFloat("stat5", defaultStat) - removal, 0, max));
+        PlayerPrefs.SetFloat("stat6", Mathf.Clamp(PlayerPrefs.GetFloat("stat6", defaultStat) - removal, 0, max));
+        PlayerPrefs.SetFloat("stat7", Mathf.Clamp(PlayerPrefs.GetFloat("stat7", defaultStat) - removal, 0, max));
+        PlayerPrefs.SetFloat("stat8", Mathf.Clamp(PlayerPrefs.GetFloat("stat8", defaultStat) - removal, 0, max));
         
         if (hours > requiredPass) {
             PlayerPrefs.SetString("LastDate", "" + localDate);

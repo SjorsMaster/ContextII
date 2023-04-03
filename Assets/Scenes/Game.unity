@@ -1158,7 +1158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00001335144, y: -0.00007541478}
+  m_AnchoredPosition: {x: 27.765146, y: -0.00007541478}
   m_SizeDelta: {x: -27.765137, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &324931542
@@ -8291,7 +8291,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188558359}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1188558363
 Camera:
   m_ObjectHideFlags: 0
@@ -8584,6 +8584,7 @@ MonoBehaviour:
   stats: {fileID: 357060832}
   TradePots: {fileID: 1825485816}
   removal: 0.001
+  defaultStat: 10
   max: 15
   canTradePotions: 15
   potionButt: {fileID: 622786575}
